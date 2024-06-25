@@ -1,28 +1,29 @@
 package hr.algebra.dtarin.interop.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class MainController {
 
-    @GetMapping("/getExample")
-    public String getExample() {
-        return "GET Request Received";
+    @GetMapping("/get")
+    public ResponseEntity<String> getMethod() {
+        return ResponseEntity.ok("GET Request OK");
     }
 
-    @PostMapping("/postExample")
-    public String postExample() {
-        return "POST Request Received";
+    @PostMapping("/post")
+    public ResponseEntity<String> postMethod(@RequestBody String body) {
+        return ResponseEntity.ok("POST Request OK");
     }
 
-    @PutMapping("/putExample")
-    public String putExample() {
-        return "PUT Request Received";
+    @PutMapping("/put")
+    public ResponseEntity<String> putMethod(@RequestBody String body) {
+        return ResponseEntity.ok("PUT Request OK");
     }
 
-    @DeleteMapping("/deleteExample")
-    public String deleteExample() {
-        return "DELETE Request Received";
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteMethod() {
+        return ResponseEntity.ok("DELETE Request OK");
     }
 }
