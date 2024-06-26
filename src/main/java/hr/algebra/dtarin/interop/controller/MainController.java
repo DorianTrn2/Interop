@@ -21,14 +21,14 @@ public class MainController {
 
     @PostMapping("/post")
     public ResponseEntity<String> postMethod(@RequestBody String body) {
-        jmsTemplate.convertAndSend( "POST Request");
-        return ResponseEntity.ok("POST Request OK");
+        jmsTemplate.convertAndSend( "POST Request. Body: "+body);
+        return ResponseEntity.ok("POST Request OK. Body: "+body);
     }
 
     @PutMapping("/put")
     public ResponseEntity<String> putMethod(@RequestBody String body) {
-        jmsTemplate.convertAndSend( "PUT Request");
-        return ResponseEntity.ok("PUT Request OK");
+        jmsTemplate.convertAndSend( "PUT Request. Body: "+body);
+        return ResponseEntity.ok("PUT Request OK. Body: "+body);
     }
 
     @DeleteMapping("/delete")
